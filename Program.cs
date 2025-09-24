@@ -1,3 +1,5 @@
+using BaiTap_02_23WebC_Nhom10.Models;
+
 namespace BaiTap_02_23WebC_Nhom10
 {
     public class Program
@@ -8,7 +10,7 @@ namespace BaiTap_02_23WebC_Nhom10
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddScoped<DSSPStore>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
