@@ -1,3 +1,184 @@
 {
-
+  "products": [
+    {
+      "MaSp": 1,
+      "TenSp": "Iphone 11 Thường",
+      "DonGia": 11000000,
+      "DonGiaKhuyenMai": 0.05,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 11 thường",
+      "LoaiSp": "Iphone 11"
+    },
+    {
+      "MaSp": 2,
+      "TenSp": "Iphone 11 Pro",
+      "DonGia": 15000000,
+      "DonGiaKhuyenMai": 0.07,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 11 Pro cao cấp",
+      "LoaiSp": "Iphone 11"
+    },
+    {
+      "MaSp": 3,
+      "TenSp": "Iphone 11 Pro Max",
+      "DonGia": 17000000,
+      "DonGiaKhuyenMai": 0.1,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 11 Pro Max màn hình lớn",
+      "LoaiSp": "Iphone 11"
+    },
+    {
+      "MaSp": 4,
+      "TenSp": "Iphone 12 Mini",
+      "DonGia": 16000000,
+      "DonGiaKhuyenMai": 0.05,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 12 Mini nhỏ gọn",
+      "LoaiSp": "Iphone 12"
+    },
+    {
+      "MaSp": 5,
+      "TenSp": "Iphone 12 Thường",
+      "DonGia": 18000000,
+      "DonGiaKhuyenMai": 0.05,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 12 thường",
+      "LoaiSp": "Iphone 12"
+    },
+    {
+      "MaSp": 6,
+      "TenSp": "Iphone 12 Pro",
+      "DonGia": 20000000,
+      "DonGiaKhuyenMai": 0.07,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 12 Pro",
+      "LoaiSp": "Iphone 12"
+    },
+    {
+      "MaSp": 7,
+      "TenSp": "Iphone 12 Pro Max",
+      "DonGia": 22000000,
+      "DonGiaKhuyenMai": 0.1,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 12 Pro Max cao cấp",
+      "LoaiSp": "Iphone 12"
+    },
+    {
+      "MaSp": 8,
+      "TenSp": "Iphone 13 Mini",
+      "DonGia": 18000000,
+      "DonGiaKhuyenMai": 0.05,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 13 Mini nhỏ gọn",
+      "LoaiSp": "Iphone 13"
+    },
+    {
+      "MaSp": 9,
+      "TenSp": "Iphone 13 Thường",
+      "DonGia": 21000000,
+      "DonGiaKhuyenMai": 0.05,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 13 thường",
+      "LoaiSp": "Iphone 13"
+    },
+    {
+      "MaSp": 10,
+      "TenSp": "Iphone 13 Pro",
+      "DonGia": 23000000,
+      "DonGiaKhuyenMai": 0.07,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 13 Pro mạnh mẽ",
+      "LoaiSp": "Iphone 13"
+    },
+    {
+      "MaSp": 11,
+      "TenSp": "Iphone 13 Pro Max",
+      "DonGia": 25000000,
+      "DonGiaKhuyenMai": 0.1,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 13 Pro Max cao cấp nhất",
+      "LoaiSp": "Iphone 13"
+    },
+    {
+      "MaSp": 12,
+      "TenSp": "Iphone 14 Thường",
+      "DonGia": 23000000,
+      "DonGiaKhuyenMai": 0.05,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 14 thường mới nhất",
+      "LoaiSp": "Iphone 14"
+    },
+    {
+      "MaSp": 13,
+      "TenSp": "Iphone 14 Plus",
+      "DonGia": 25000000,
+      "DonGiaKhuyenMai": 0.07,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 14 Plus màn hình lớn",
+      "LoaiSp": "Iphone 14"
+    },
+    {
+      "MaSp": 14,
+      "TenSp": "Iphone 14 Pro",
+      "DonGia": 28000000,
+      "DonGiaKhuyenMai": 0.08,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 14 Pro cao cấp",
+      "LoaiSp": "Iphone 14"
+    },
+    {
+      "MaSp": 15,
+      "TenSp": "Iphone 14 Pro Max",
+      "DonGia": 30000000,
+      "DonGiaKhuyenMai": 0.1,
+      "HinhAnh": "",
+      "MoTa": "Phiên bản iPhone 14 Pro Max cao cấp nhất",
+      "LoaiSp": "Iphone 14"
+    },
+    {
+      "MaSp": 16,
+      "TenSp": "Samsung Galaxy S24",
+      "DonGia": 22000000,
+      "DonGiaKhuyenMai": 0.05,
+      "HinhAnh": "",
+      "MoTa": "Samsung Galaxy S24 bản tiêu chuẩn",
+      "LoaiSp": "Samsung"
+    },
+    {
+      "MaSp": 17,
+      "TenSp": "Samsung Galaxy S24 Ultra",
+      "DonGia": 28000000,
+      "DonGiaKhuyenMai": 0.08,
+      "HinhAnh": "",
+      "MoTa": "Samsung Galaxy S24 Ultra màn hình lớn",
+      "LoaiSp": "Samsung"
+    },
+    {
+      "MaSp": 18,
+      "TenSp": "Samsung Galaxy S25",
+      "DonGia": 24000000,
+      "DonGiaKhuyenMai": 0.05,
+      "HinhAnh": "",
+      "MoTa": "Samsung Galaxy S25 bản mới",
+      "LoaiSp": "Samsung"
+    },
+    {
+      "MaSp": 19,
+      "TenSp": "Samsung Galaxy S25 Ultra",
+      "DonGia": 30000000,
+      "DonGiaKhuyenMai": 0.08,
+      "HinhAnh": "",
+      "MoTa": "Samsung Galaxy S25 Ultra cao cấp",
+      "LoaiSp": "Samsung"
+    },
+    {
+      "MaSp": 20,
+      "TenSp": "Samsung Galaxy Z Fold 6",
+      "DonGia": 40000000,
+      "DonGiaKhuyenMai": 0.1,
+      "HinhAnh": "",
+      "MoTa": "Samsung Galaxy Z Fold 6 màn hình gập",
+      "LoaiSp": "Samsung"
+    }
+  ]
 }
