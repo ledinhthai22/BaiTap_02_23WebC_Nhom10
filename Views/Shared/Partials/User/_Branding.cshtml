@@ -3,15 +3,15 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="/">e<span>Electronics</span></a></h1>
+                        <h1><a asp-controller="home" asp-action="index">e<span>Electronics</span></a></h1>
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="/product/cart">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a asp-controller="product" asp-action="cart">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                     </div>
                 </div>
             </div>
         </div>
-</div> <!-- End site branding area -->
+    </div> <!-- End site branding area -->

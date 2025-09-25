@@ -33,6 +33,8 @@
 
     @await Html.PartialAsync("Partials/User/_Container.cshtml")
 
+    @RenderSection("subtitle", required: false)
+
     @RenderBody()
 
     @await Html.PartialAsync("Partials/User/_Footer.cshtml")
