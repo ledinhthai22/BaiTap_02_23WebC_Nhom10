@@ -25,7 +25,7 @@ namespace BaiTap_02_23WebC_Nhom10
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseMiddleware<Middleware.ProductMiddleware>();
             app.MapStaticAssets();
             app.UseEndpoints(endpoints =>
             {

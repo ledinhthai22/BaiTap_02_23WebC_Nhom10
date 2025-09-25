@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\images\**" />
+    <Content Remove="wwwroot\images\**" />
+    <EmbeddedResource Remove="wwwroot\images\**" />
+    <None Remove="wwwroot\images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\Admin\bower_components\bootstrap-social\.bower.json" />
     <Content Include="wwwroot\Admin\bower_components\bootstrap-social\bootstrap-social.css" />
     <Content Include="wwwroot\Admin\bower_components\bootstrap-social\bower.json" />
@@ -239,7 +246,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   <ItemGroup>
