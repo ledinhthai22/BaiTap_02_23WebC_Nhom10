@@ -25,11 +25,6 @@ namespace BaiTap_02_23WebC_Nhom10.Controllers
 
         public IActionResult Privacy()
         {
-            if (HttpContext.Items.TryGetValue("product", out var productStoreObj) && productStoreObj is ProductStore productStore)
-            {
-                var latestProducts = productStore.Products;
-                return View(latestProducts);
-            }
             return View();
         }
         public IActionResult Checkout()

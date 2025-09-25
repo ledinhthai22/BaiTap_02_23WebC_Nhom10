@@ -139,10 +139,11 @@
                                 <div class="single-product">
                                     <div class="product-f-image">
                                         <img src="~/img/@p.HinhAnh" alt="">
-                                        <div class="product-hover">
-                                            <a asp-controller="product" asp-action="cart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="#" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
+                                    <div class="product-hover">
+                                        <a asp-controller="product" asp-action="cart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+
                                     </div>
 
                                     <h2><a href="#">@p.TenSp</a></h2>
@@ -196,7 +197,7 @@
                         @foreach (var p in Model.Take(3))
                         {
                             <div class="single-wid-product">
-                                <a href="single-product.html"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
+                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
                                 <h2><a href="single-product.html">@p.TenSp</a></h2>
                                 <div class="product-wid-rating">
                                     <i class="fa fa-star"></i>
@@ -223,7 +224,7 @@
                         @foreach (var p in Model.Skip(3).Take(3))
                         {
                             <div class="single-wid-product">
-                                <a href="single-product.html"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
+                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
                                 <h2><a href="single-product.html">@p.TenSp</a></h2>
                                 <div class="product-wid-rating">
                                     <i class="fa fa-star"></i>
@@ -250,7 +251,7 @@
                         @foreach (var p in Model.Skip(6).Take(3))
                         {
                             <div class="single-wid-product">
-                                <a href="single-product.html"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
+                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
                                 <h2><a href="single-product.html">@p.TenSp</a></h2>
                                 <div class="product-wid-rating">
                                     <i class="fa fa-star"></i>

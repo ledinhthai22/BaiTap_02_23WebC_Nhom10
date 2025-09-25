@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BaiTap_02_23WebC_Nhom10.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
@@ -8,9 +9,14 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-        public IActionResult Detail()
+        public IActionResult Detail(int?id)
         {
-            return View();
+            if (HttpContext.Items.TryGetValue("product", out var productStoreObj) && productStoreObj is ProductStore productStore)
+            {
+                var product = productStore.Products.FirstOrDefault(p => p.MaSp == id);
+                return View(product);
+            }
+            return View("~/Views/Home/Privacy");
         }
         public IActionResult Cart()
         {
