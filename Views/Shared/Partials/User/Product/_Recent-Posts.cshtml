@@ -1,10 +1,14 @@
-﻿<div class="single-sidebar">
+﻿@{
+    var productStore = Context.Items["product"] as ProductStore;
+    List<Product> products = new List<Product>();
+    products = productStore.Products;
+}
+<div class="single-sidebar">
     <h2 class="sidebar-title">Recent Posts</h2>
     <ul>
-        <li><a href="">Sony Smart TV - 2015</a></li>
-        <li><a href="">Sony Smart TV - 2015</a></li>
-        <li><a href="">Sony Smart TV - 2015</a></li>
-        <li><a href="">Sony Smart TV - 2015</a></li>
-        <li><a href="">Sony Smart TV - 2015</a></li>
+		@foreach (var p in products.Take(5))
+		{
+			<li><a asp-controller="product" asp-action="detail" asp-route-id="@p.MaSp">@p.TenSp</a></li>
+		}
     </ul>
 </div>

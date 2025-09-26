@@ -1,31 +1,19 @@
-﻿<div class="single-sidebar">
+﻿@{
+    var productStore = Context.Items["product"] as ProductStore;
+    List<Product> products = new List<Product>();
+    products = productStore.Products;
+}
+<div class="single-sidebar">
     <h2 class="sidebar-title">Products</h2>
-    <div class="thubmnail-recent">
-        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-        <h2><a href="">Sony Smart TV - 2015</a></h2>
-        <div class="product-sidebar-price">
-            <ins>$700.00</ins> <del>$800.00</del>
+        @foreach (var p in products.Take(3))
+        {
+        <div class="thubmnail-recent">
+            <img src="~/img/@p.HinhAnh" class="recent-thumb" alt="">
+            <h2><a asp-controller="product" asp-action="detail" asp-route-id="@p.MaSp">@p.TenSp</a></h2>
+            <div class="product-sidebar-price">
+                <ins>$@string.Format("{0:N2}", p.DonGia * (1 - p.DonGiaKhuyenMai))</ins>
+                <del>$@string.Format("{0:N2}", p.DonGia)</del>
+            </div>
         </div>
-    </div>
-    <div class="thubmnail-recent">
-        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-        <h2><a href="">Sony Smart TV - 2015</a></h2>
-        <div class="product-sidebar-price">
-            <ins>$700.00</ins> <del>$800.00</del>
-        </div>
-    </div>
-    <div class="thubmnail-recent">
-        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-        <h2><a href="">Sony Smart TV - 2015</a></h2>
-        <div class="product-sidebar-price">
-            <ins>$700.00</ins> <del>$800.00</del>
-        </div>
-    </div>
-    <div class="thubmnail-recent">
-        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-        <h2><a href="">Sony Smart TV - 2015</a></h2>
-        <div class="product-sidebar-price">
-            <ins>$700.00</ins> <del>$800.00</del>
-        </div>
-    </div>
+        }
 </div>

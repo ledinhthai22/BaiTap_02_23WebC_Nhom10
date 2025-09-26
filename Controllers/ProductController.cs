@@ -9,14 +9,14 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-        public IActionResult Detail(int?id)
+        public IActionResult Detail(int id = 1)
         {
             if (HttpContext.Items.TryGetValue("product", out var productStoreObj) && productStoreObj is ProductStore productStore)
             {
                 var product = productStore.Products.FirstOrDefault(p => p.MaSp == id);
                 return View(product);
             }
-            return View("~/Views/Home/Privacy");
+            return View("~/Views/Home/NotFound");
         }
         public IActionResult Cart()
         {

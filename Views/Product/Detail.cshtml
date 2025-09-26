@@ -1,4 +1,5 @@
-﻿@model Product
+﻿@model BaiTap_02_23WebC_Nhom10.Models.Product
+
 @section title {
     Product - eElectronics - HTML eCommerce Template
 }
@@ -37,9 +38,9 @@
             <div class="col-md-8">
                 <div class="product-content-right">
                     <div class="product-breadcroumb">
-                        <a href="/">Home</a>
+                        <a asp-controller="home" asp-action="index">Home</a>
                         <a href="#">@Model.LoaiSp</a>
-                        <a href="#">@Model.TenSp</a>
+                        <a asp-controller="product" asp-action="detail" asp-route-id="@Model.MaSp">@Model.TenSp</a>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">

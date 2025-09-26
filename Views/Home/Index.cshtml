@@ -192,8 +192,6 @@
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Top Sellers</h2>
                     <a href="#" class="wid-view-more">View All</a>
-                    @if (Model != null)
-                    {
                         @foreach (var p in Model.Take(3))
                         {
                             <div class="single-wid-product">
@@ -212,15 +210,12 @@
                                 </div>
                             </div>
                         }
-                    }
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Recently Viewed</h2>
                     <a href="#" class="wid-view-more">View All</a>
-                    @if (Model != null)
-                    {
                         @foreach (var p in Model.Skip(3).Take(3))
                         {
                             <div class="single-wid-product">
@@ -239,15 +234,12 @@
                                 </div>
                             </div>
                         }
-                    }
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Top New</h2>
                     <a href="#" class="wid-view-more">View All</a>
-                    @if (Model != null)
-                    {
                         @foreach (var p in Model.Skip(6).Take(3))
                         {
                             <div class="single-wid-product">
@@ -266,7 +258,6 @@
                                 </div>
                             </div>
                         }
-                    }
                 </div>
             </div>
         </div>
