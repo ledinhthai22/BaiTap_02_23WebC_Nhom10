@@ -7,7 +7,12 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            if (HttpContext.Items.TryGetValue("product", out var productStoreObj) && productStoreObj is ProductStore productStore)
+            {
+                var product = productStore.Products;
+                return View(product);
+            }
+            return View("~/Views/Home/NotFound");
         }
         public IActionResult Detail(int id = 1)
         {

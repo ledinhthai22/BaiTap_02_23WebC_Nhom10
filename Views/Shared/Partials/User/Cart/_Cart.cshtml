@@ -1,4 +1,10 @@
-﻿<form method="post" action="#">
+﻿@{
+    var productStore = Context.Items["product"] as ProductStore;
+    List<Product>
+    products = new List<Product>();
+    products = productStore.Products;
+}
+<form method="post" action="#">
     <table cellspacing="0" class="shop_table cart">
         <thead>
             <tr>
@@ -11,35 +17,44 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="cart_item">
-                <td class="product-remove">
-                    <a title="Remove this item" class="remove" href="#">×</a>
-                </td>
+            @{
+                var p = products.First();
+                <tr class="cart_item">
+                    <td class="product-remove">
+                        <a title="Remove this item" class="remove" href="#">×</a>
+                    </td>
 
-                <td class="product-thumbnail">
-                    <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/product-thumb-2.jpg"></a>
-                </td>
+                    <td class="product-thumbnail">
+                        <a href="#">
+                            <img width="145" height="145" alt="@p.TenSp" class="shop_thumbnail" src="~/img/@p.HinhAnh" />
 
-                <td class="product-name">
-                    <a href="single-product.html">Ship Your Idea</a>
-                </td>
+                        </a>
+                    </td>
 
-                <td class="product-price">
-                    <span class="amount">£15.00</span>
-                </td>
+                    <td class="product-name">
+                        <a href="#">Ship Your Idea</a>
+                    </td>
 
-                <td class="product-quantity">
-                    <div class="quantity buttons_added">
-                        <input type="button" class="minus" value="-">
-                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
-                        <input type="button" class="plus" value="+">
-                    </div>
-                </td>
+                    <td class="product-price">
+                        <span class="amount">
+                            <p>@p.DonGia.ToString("N0") VNĐ</p>
+                        </span>
+                    </td>
 
-                <td class="product-subtotal">
-                    <span class="amount">£15.00</span>
-                </td>
-            </tr>
+                    <td class="product-quantity">
+                        <div class="quantity buttons_added">
+                            <input type="button" class="minus" value="-">
+                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
+                            <input type="button" class="plus" value="+">
+                        </div>
+                    </td>
+
+                    <td class="product-subtotal">
+                        <span class="amount">@p.DonGia.ToString("N0") VNĐ</span>
+                    </td>
+                </tr>
+            }
+
             <tr>
                 <td class="actions" colspan="6">
                     <div class="coupon">
