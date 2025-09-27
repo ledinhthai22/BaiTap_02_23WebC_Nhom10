@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using BaiTap_02_23WebC_Nhom10.Models;
+using BaiTap_02_23WebC_Nhom10.Service;
 
 namespace BaiTap_02_23WebC_Nhom10.Middleware
 {
@@ -28,7 +29,7 @@ namespace BaiTap_02_23WebC_Nhom10.Middleware
                     products = JsonSerializer.Deserialize<List<Product>>(productsElement.GetRawText()) ?? new List<Product>();
                 }
 
-                context.Items["product"] = new ProductStore(products);
+                context.Items["product"] = new ProductService(products);
             }
 
             await _next(context);

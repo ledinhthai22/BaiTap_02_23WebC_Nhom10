@@ -1,8 +1,9 @@
 ﻿@using System.Globalization;
+@using BaiTap_02_23WebC_Nhom10.Service;
 @{
     
-    var productStore = Context.Items["product"] as ProductStore;
-    var products = productStore?.Products ?? new List<Product>();
+    var productService = Context.Items["product"] as ProductService;
+    var products = productService?.Products ?? new List<Product>();
 
     
     var culture = new CultureInfo("vi-VN");

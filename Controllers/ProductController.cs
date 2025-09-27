@@ -1,5 +1,6 @@
 ﻿using BaiTap_02_23WebC_Nhom10.Models;
 using Microsoft.AspNetCore.Mvc;
+using BaiTap_02_23WebC_Nhom10.Service;
 
 namespace WebApplication1.Controllers
 {
@@ -7,18 +8,18 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            if (HttpContext.Items.TryGetValue("product", out var productStoreObj) && productStoreObj is ProductStore productStore)
+            if (HttpContext.Items.TryGetValue("product", out var productServiceObj) && productServiceObj is ProductService productService)
             {
-                var product = productStore.Products;
+                var product = productService.Products;
                 return View(product);
             }
             return View("~/Views/Home/NotFound");
         }
         public IActionResult Detail(int id = 1)
         {
-            if (HttpContext.Items.TryGetValue("product", out var productStoreObj) && productStoreObj is ProductStore productStore)
+            if (HttpContext.Items.TryGetValue("product", out var productServiceObj) && productServiceObj is ProductService productService)
             {
-                var product = productStore.Products.FirstOrDefault(p => p.MaSp == id);
+                var product = productService.Products.FirstOrDefault(p => p.MaSp == id);
                 return View(product);
             }
             return View("~/Views/Home/NotFound");
