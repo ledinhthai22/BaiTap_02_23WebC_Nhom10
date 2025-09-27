@@ -98,7 +98,6 @@
             </div>
         </div>
     </div>
-
 </div>
 <div class="promo-area">
     <div class="zigzag-bottom"></div>
@@ -153,7 +152,7 @@
 
                                 </div>
 
-                                <h2><a href="#">@p.TenSp</a></h2>
+                                <h2><a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp">@p.TenSp</a></h2>
 
                                 <div class="product-carousel-price">
                                     @if (p.DonGiaKhuyenMai > 0)
@@ -211,7 +210,7 @@
                         
                         <div class="single-wid-product">
                             <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">@p.TenSp</a></h2>
+                            <h2><a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp">@p.TenSp</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -243,7 +242,7 @@
                             double finalPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
                         <div class="single-wid-product">
                             <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">@p.TenSp</a></h2>
+                            <h2><a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp">@p.TenSp</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -275,7 +274,7 @@
                             double finalPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
                         <div class="single-wid-product">
                             <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">@p.TenSp</a></h2>
+                            <h2><a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp">@p.TenSp</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
