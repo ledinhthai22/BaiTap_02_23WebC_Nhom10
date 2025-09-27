@@ -1,12 +1,18 @@
 ﻿@{
+
     var productStore = Context.Items["product"] as ProductStore;
-    List<Product> products = new List<Product>();
-    products = productStore.Products;
+    var products = productStore?.Products ?? new List<Product>();
+
 }
+
 <div class="related-products-wrapper">
     <h2 class="related-products-title">Related Products</h2>
     <div class="related-products-carousel">
-        @foreach (var p in products){
+        @foreach (var p in products)
+        {
+
+            var finalPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+
             <div class="single-product">
                 <div class="product-f-image">
                     <img src="~/img/@p.HinhAnh" alt="">
@@ -19,8 +25,19 @@
                 <h2><a asp-controller="product" asp-action="detail" asp-route-id="@p.MaSp">@p.TenSp</a></h2>
 
                 <div class="product-carousel-price">
-                    <ins>$@string.Format("{0:N2}", p.DonGia * (1 - p.DonGiaKhuyenMai))</ins>
-                    <del>$@string.Format("{0:N2}", p.DonGia)</del>
+
+                    @if (p.DonGiaKhuyenMai > 0)
+                    {
+
+                        <ins>$@finalPrice.ToString("N2")</ins>
+
+                        <del>$@p.DonGia.ToString("N2")</del>
+                    }
+                    else
+                    {
+
+                        <ins>$@p.DonGia.ToString("N2")</ins>
+                    }
                 </div>
             </div>
         }

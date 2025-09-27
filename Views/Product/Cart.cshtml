@@ -1,8 +1,10 @@
 ﻿@section title {
-    Shopping Cart - eElectronics - HTML eCommerce Template
+        Shopping Cart - eElectronics - HTML eCommerce Template
 }
-@section css {}
-@section js {}
+@section css {
+}
+@section js {
+}
 @section subtitle {
     <div class="product-big-title-area">
         <div class="container">
@@ -22,30 +24,30 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="single-sidebar">
-					@await Html.PartialAsync("~/Views/Shared/Partials/User/Product/_Search.cshtml")
+                    @await Html.PartialAsync("~/Views/Shared/Partials/User/Product/_Search.cshtml")
                 </div>
 
                 <div class="single-sidebar">
-					@await Html.PartialAsync("~/Views/Shared/Partials/User/Product/_List-Product.cshtml")
+                    @await Html.PartialAsync("~/Views/Shared/Partials/User/Product/_List-Product.cshtml")
                 </div>
 
                 <div class="single-sidebar">
-					@await Html.PartialAsync("~/Views/Shared/Partials/User/Product/_Recent-Posts.cshtml")
+                    @await Html.PartialAsync("~/Views/Shared/Partials/User/Product/_Recent-Posts.cshtml")
                 </div>
             </div>
 
             <div class="col-md-8">
                 <div class="product-content-right">
                     <div class="woocommerce">
-						@await Html.PartialAsync("~/Views/Shared/Partials/User/Cart/_Cart.cshtml")
+                        @await Html.PartialAsync("~/Views/Shared/Partials/User/Cart/_Cart.cshtml")
                         <div class="cart-collaterals">
                             <div class="cross-sells">
-								@await Html.PartialAsync("~/Views/Shared/Partials/User/Product/_Interest-Product.cshtml")
+                                @await Html.PartialAsync("~/Views/Shared/Partials/User/Product/_Interest-Product.cshtml")
                             </div>
                             <div class="cart_totals ">
-								@await Html.PartialAsync("~/Views/Shared/Partials/User/Cart/_Total-Cart.cshtml")
+                                @await Html.PartialAsync("~/Views/Shared/Partials/User/Cart/_Total-Cart.cshtml")
                             </div>
-							@await Html.PartialAsync("~/Views/Shared/Partials/User/Cart/_Ship.cshtml")
+                            @await Html.PartialAsync("~/Views/Shared/Partials/User/Cart/_Ship.cshtml")
                         </div>
                     </div>
                 </div>

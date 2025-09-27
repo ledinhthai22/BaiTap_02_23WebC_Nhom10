@@ -1,4 +1,11 @@
-﻿@model List<Product>
+﻿@using System.Globalization;
+@using Microsoft.AspNetCore.Html;
+@using System.Text;
+@model List<Product> 
+@{
+    var culture = new CultureInfo("vi-VN");
+}
+
 @section title {
     eElectronics - HTML eCommerce Template
 }
@@ -6,7 +13,7 @@
 
 }
 @section js {
-    
+
 }
 <div class="slider-area">
     <div class="zigzag-bottom"></div>
@@ -92,8 +99,7 @@
         </div>
     </div>
 
-</div> <!-- End slider area -->
-
+</div>
 <div class="promo-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
@@ -124,8 +130,7 @@
             </div>
         </div>
     </div>
-</div> <!-- End promo area -->
-
+</div>
 <div class="maincontent-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
@@ -134,33 +139,41 @@
                 <div class="latest-product">
                     <h2 class="section-title">Latest Products</h2>
                     <div class="product-carousel">
-                            @foreach (var p in Model)
-                            {
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="~/img/@p.HinhAnh" alt="">
+                        @foreach (var p in Model)
+                        {
+
+                            double finalPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <img src="~/img/@p.HinhAnh" alt="">
                                     <div class="product-hover">
                                         <a asp-controller="product" asp-action="cart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
 
-                                    </div>
-
-                                    <h2><a href="#">@p.TenSp</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$@string.Format("{0:N2}", p.DonGia * (1 - p.DonGiaKhuyenMai))</ins>
-                                        <del>$@string.Format("{0:N2}", p.DonGia)</del>
-                                    </div>
                                 </div>
-                            }
+
+                                <h2><a href="#">@p.TenSp</a></h2>
+
+                                <div class="product-carousel-price">
+                                    @if (p.DonGiaKhuyenMai > 0)
+                                    {
+                                        <ins>@finalPrice.ToString("N0", culture) VNĐ</ins>
+                                        <del>@p.DonGia.ToString("N0", culture) VNĐ</del>
+                                    }
+                                    else
+                                    {
+                                        <ins>@p.DonGia.ToString("N0", culture) VNĐ</ins>
+                                    }
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> <!-- End main content area -->
-
+</div>
 <div class="brands-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
@@ -182,8 +195,7 @@
             </div>
         </div>
     </div>
-</div> <!-- End brands area -->
-
+</div>
 <div class="product-widget-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
@@ -192,72 +204,98 @@
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Top Sellers</h2>
                     <a href="#" class="wid-view-more">View All</a>
-                        @foreach (var p in Model.Take(3))
-                        {
-                            <div class="single-wid-product">
-                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
-                                <h2><a href="single-product.html">@p.TenSp</a></h2>
-                                <div class="product-wid-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product-wid-price">
-                                    <ins>$@string.Format("{0:N2}", p.DonGia * (1 - p.DonGiaKhuyenMai))</ins>
-                                    <del>$@string.Format("{0:N2}", p.DonGia)</del>
-                                </div>
+                    @foreach (var p in Model.Take(3))
+                    {
+                        
+                            double finalPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+                        
+                        <div class="single-wid-product">
+                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
+                            <h2><a href="single-product.html">@p.TenSp</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                             </div>
-                        }
+                            <div class="product-wid-price">
+                                @if (p.DonGiaKhuyenMai > 0)
+                                {
+                                    <ins>@finalPrice.ToString("N0", culture) VNĐ</ins>
+                                    <del>@p.DonGia.ToString("N0", culture) VNĐ</del>
+                                }
+                                else
+                                {
+                                    <ins>@p.DonGia.ToString("N0", culture) VNĐ</ins>
+                                }
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Recently Viewed</h2>
                     <a href="#" class="wid-view-more">View All</a>
-                        @foreach (var p in Model.Skip(3).Take(3))
-                        {
-                            <div class="single-wid-product">
-                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
-                                <h2><a href="single-product.html">@p.TenSp</a></h2>
-                                <div class="product-wid-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product-wid-price">
-                                    <ins>$@string.Format("{0:N2}", p.DonGia * (1 - p.DonGiaKhuyenMai))</ins>
-                                    <del>$@string.Format("{0:N2}", p.DonGia)</del>
-                                </div>
+                    @foreach (var p in Model.Skip(3).Take(3))
+                    {
+                            double finalPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+                        <div class="single-wid-product">
+                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
+                            <h2><a href="single-product.html">@p.TenSp</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                             </div>
-                        }
+                            <div class="product-wid-price">
+                                @if (p.DonGiaKhuyenMai > 0)
+                                {
+                                    <ins>@finalPrice.ToString("N0", culture) VNĐ</ins>
+                                    <del>@p.DonGia.ToString("N0", culture) VNĐ</del>
+                                }
+                                else
+                                {
+                                    <ins>@p.DonGia.ToString("N0", culture) VNĐ</ins>
+                                }
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-product-widget">
                     <h2 class="product-wid-title">Top New</h2>
                     <a href="#" class="wid-view-more">View All</a>
-                        @foreach (var p in Model.Skip(6).Take(3))
-                        {
-                            <div class="single-wid-product">
-                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
-                                <h2><a href="single-product.html">@p.TenSp</a></h2>
-                                <div class="product-wid-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product-wid-price">
-                                    <ins>$@string.Format("{0:N2}", p.DonGia * (1 - p.DonGiaKhuyenMai))</ins>
-                                    <del>$@string.Format("{0:N2}", p.DonGia)</del>
-                                </div>
+                    @foreach (var p in Model.Skip(6).Take(3))
+                    {
+                            double finalPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+                        <div class="single-wid-product">
+                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp"><img src="~/img/@p.HinhAnh" alt="" class="product-thumb"></a>
+                            <h2><a href="single-product.html">@p.TenSp</a></h2>
+                            <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                             </div>
-                        }
+                            <div class="product-wid-price">
+                                @if (p.DonGiaKhuyenMai > 0)
+                                {
+                                    <ins>@finalPrice.ToString("N0", culture) VNĐ</ins>
+                                    <del>@p.DonGia.ToString("N0", culture) VNĐ</del>
+                                }
+                                else
+                                {
+                                    <ins>@p.DonGia.ToString("N0", culture) VNĐ</ins>
+                                }
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
