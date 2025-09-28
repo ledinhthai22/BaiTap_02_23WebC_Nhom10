@@ -1,9 +1,10 @@
 ﻿@using BaiTap_02_23WebC_Nhom10.Service;
+@using System.Globalization;
 @{
 
     var productService = Context.Items["product"] as ProductService;
     var products = productService?.Products ?? new List<Product>();
-
+    var culture = new CultureInfo("vi-VN");
 }
 
 <div class="related-products-wrapper">
@@ -12,7 +13,9 @@
         @foreach (var p in products)
         {
 
-            var finalPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+            double discountedPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+            string formattedDiscountedPrice = discountedPrice.ToString("N0", culture);
+            string formattedOriginalPrice = p.DonGia.ToString("N0", culture);
 
             <div class="single-product">
                 <div class="product-f-image">
@@ -29,15 +32,13 @@
 
                     @if (p.DonGiaKhuyenMai > 0)
                     {
+                        <ins>@formattedDiscountedPrice VNĐ</ins>
 
-                        <ins>$@finalPrice.ToString("N2")</ins>
-
-                        <del>$@p.DonGia.ToString("N2")</del>
+                        <del>@formattedOriginalPrice VNĐ</del>
                     }
                     else
                     {
-
-                        <ins>$@p.DonGia.ToString("N2")</ins>
+                        <ins>@formattedOriginalPrice VNĐ</ins>
                     }
                 </div>
             </div>
