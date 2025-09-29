@@ -9,5 +9,9 @@ namespace BaiTap_02_23WebC_Nhom10.Areas.Admin.Controllers
         {
             return View();
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
