@@ -3,7 +3,13 @@
 @{
     Layout = "_Layout";
 }
-
+@section title {
+    Create - Product
+}
+@section css {
+}
+@section js {
+}
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Form Thêm Sản Phẩm</h6>
@@ -11,7 +17,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-lg-8">
-                <form asp-area="Admin" asp-controller="Products" asp-action="Create" method="post">
+                <form asp-area="Admin" asp-controller="Products" asp-action="Create" method="post" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
                     <div class="form-group mb-3">
                         <label asp-for="TenSp" class="form-label font-weight-bold">Tên Sản Phẩm</label>
@@ -44,9 +50,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group mb-3">
-                                <label asp-for="HinhAnh" class="form-label font-weight-bold">Tên File Hình Ảnh</label>
-                                <input asp-for="HinhAnh" class="form-control" placeholder="Ví dụ: product-7.jpg" />
-                                <span asp-validation-for="HinhAnh" class="text-danger"></span>
+                                <label asp-for="HinhAnhFile" class="form-label font-weight-bold">Upload File Hình Ảnh</label>
+                                <input asp-for="HinhAnhFile" type="file" class="form-control" />
+                                <span asp-validation-for="HinhAnhFile" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -70,9 +76,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_js-admin");
-    }
-}
