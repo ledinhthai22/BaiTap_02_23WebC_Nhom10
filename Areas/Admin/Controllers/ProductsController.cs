@@ -2,9 +2,9 @@
 
 namespace BaiTap_02_23WebC_Nhom10.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class ProductsController : Controller
-    {
-        [Area("Admin")]
+    {  
         public IActionResult Index()
         {
             return View();

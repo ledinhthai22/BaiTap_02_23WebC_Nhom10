@@ -24,13 +24,14 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <!-- /.navbar-header -->
-            @Html.Partial("Partial/_navbar-header")
+            <partial name="Partial/_navbar-header" />
 
             <!-- /.navbar-top-links -->
-            @Html.Partial("Partial/_navbar-top-links")
+            <partial name="Partial/_navbar-top-links" /> 
 
             <!-- /.navbar-static-side -->
-            @Html.Partial("Partial/_navbar-static-side")
+            <partial name="Partial/_navbar-static-side" />
+            
         </nav>
 
         <!-- Page Content -->
@@ -44,7 +45,7 @@
             @RenderBody()
         </div>
     </div>
-    @Html.Partial("Partial/_js-admin")
+    <partial name="Partial/_js-admin" />
     @RenderSection("js", required: false)
 </body>
 
