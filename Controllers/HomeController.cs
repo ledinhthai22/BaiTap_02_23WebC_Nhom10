@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using BaiTap_02_23WebC_Nhom10.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using BaiTap_02_23WebC_Nhom10.Service;
 namespace BaiTap_02_23WebC_Nhom10.Controllers
 {
     public class HomeController : Controller
@@ -15,9 +15,9 @@ namespace BaiTap_02_23WebC_Nhom10.Controllers
 
         public IActionResult Index()
         {
-            if (HttpContext.Items.TryGetValue("product", out var productStoreObj) && productStoreObj is ProductStore productStore)
+            if (HttpContext.Items.TryGetValue("product", out var productServiceObj) && productServiceObj is ProductService productService)
             {
-                var products = productStore.Products;
+                var products = productService.Products;
                 return View(products);
             }
             return View(new List<Product>());

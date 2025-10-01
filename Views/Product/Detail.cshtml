@@ -1,7 +1,8 @@
-﻿@model BaiTap_02_23WebC_Nhom10.Models.Product
+﻿@using System.Globalization; 
+@model BaiTap_02_23WebC_Nhom10.Models.Product
 
 @section title {
-    Product - eElectronics - HTML eCommerce Template
+        Product - eElectronics - HTML eCommerce Template
 }
 @section css {
 }
@@ -19,6 +20,12 @@
             </div>
         </div>
     </div>
+}
+@{
+    var culture = new CultureInfo("vi-VN");
+    double discountedPrice = Model.DonGia * (1 - Model.DonGiaKhuyenMai);
+    string formattedDiscountedPrice = discountedPrice.ToString("N0", culture);
+    string formattedOriginalPrice = Model.DonGia.ToString("N0", culture);
 }
 <div class="single-product-area">
     <div class="zigzag-bottom"></div>
@@ -56,12 +63,13 @@
                                 <div class="product-inner-price">
                                     @if (Model.DonGiaKhuyenMai > 0)
                                     {
-                                        <ins>$@string.Format("{0:N2}", Model.DonGia * (1 - Model.DonGiaKhuyenMai))</ins>
-                                        <del>$@string.Format("{0:N2}", Model.DonGia)</del>
+                                        <ins>@formattedDiscountedPrice VNĐ</ins>
+                                        <del> @formattedOriginalPrice VNĐ </del > 
                                     }
                                     else
                                     {
-                                        <ins>$@string.Format("{0:N2}", Model.DonGia)</ins>
+                                        <ins>@formattedOriginalPrice VNĐ</ins>
+                                                                       
                                     }
                                 </div>
                                 <form action="/cart/add/@Model.MaSp" class="cart">

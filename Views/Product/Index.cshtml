@@ -1,9 +1,13 @@
-﻿@section title{
-    Shop - eElectronics - HTML eCommerce Template
-}   
-@section css{}
-@section js{}
+﻿@using System.Globalization; 
+
 @model List<Product>
+@section title {
+        Shop - eElectronics - HTML eCommerce Template
+}
+@section css {
+}
+@section js {
+}
 @section subtitle {
     <div class="product-big-title-area">
         <div class="container">
@@ -17,10 +21,14 @@
         </div>
     </div>
 }
-    <div class="single-product-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
+@{
+    ViewBag.PageName = "List";
+    var culture = new CultureInfo("vi-VN");
+}
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
             @foreach (var p in Model)
             {
                 <div class="col-md-3 col-sm-6">
@@ -30,7 +38,13 @@
                         </div>
                         <h2><a href="">@p.TenSp</a></h2>
                         <div class="product-carousel-price">
-                            <ins>@(@Math.Round(@p.DonGia * (1 - @p.DonGiaKhuyenMai)).ToString("N0")) VNĐ</ins> <del>@p.DonGia.ToString("N0") VNĐ</del>
+                            @{
+
+                                var discountedPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+                                var formattedDiscountedPrice = discountedPrice.ToString("N0", culture);
+                                var formattedOriginalPrice = p.DonGia.ToString("N0", culture);
+                            }
+                            <ins>@formattedDiscountedPrice VNĐ</ins> <del>@formattedOriginalPrice VNĐ</del>
                         </div>
 
                         <div class="product-option-shop">
@@ -39,32 +53,30 @@
                     </div>
                 </div>
             }
-            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-pagination text-center">
-                        <nav>
-                          <ul class="pagination">
-                            <li>
-                              <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                              </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                              <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </nav>                        
-                    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-pagination text-center">
+                    <nav>
+                        <ul class="pagination">
+                            @{
+                                var TotalItems = ViewBag.TotalItems;
+                                var PageSize = ViewBag.PageSize;
+                                var CurrentPage = ViewBag.CurrentPage;
+								var TotalPages = (int)Math.Ceiling((double)TotalItems / PageSize);
+
+								for (int i = 1; i <= TotalPages; i++)
+								{
+                                    <li class="page-item @(i == CurrentPage ? "active" : "")">
+                                        <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                    </li>
+								}
+                            }
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
+</div>

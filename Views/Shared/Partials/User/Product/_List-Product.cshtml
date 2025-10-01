@@ -1,19 +1,39 @@
-﻿@{
-    var productStore = Context.Items["product"] as ProductStore;
-    List<Product> products = new List<Product>();
-    products = productStore.Products;
+﻿@using System.Globalization;
+@using BaiTap_02_23WebC_Nhom10.Service;
+@{
+    
+    var productService = Context.Items["product"] as ProductService;
+    var products = productService?.Products ?? new List<Product>();
+
+ 
+    var culture = new CultureInfo("vi-VN");
 }
+
 <div class="single-sidebar">
     <h2 class="sidebar-title">Products</h2>
-        @foreach (var p in products.Take(3))
-        {
+    @foreach (var p in products.Take(3))
+    {
+        
+        double discountedPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+        string formattedDiscountedPrice = discountedPrice.ToString("N0", culture);
+        string formattedOriginalPrice = p.DonGia.ToString("N0", culture);
+
         <div class="thubmnail-recent">
             <img src="~/img/@p.HinhAnh" class="recent-thumb" alt="">
             <h2><a asp-controller="product" asp-action="detail" asp-route-id="@p.MaSp">@p.TenSp</a></h2>
+
             <div class="product-sidebar-price">
-                <ins>$@string.Format("{0:N2}", p.DonGia * (1 - p.DonGiaKhuyenMai))</ins>
-                <del>$@string.Format("{0:N2}", p.DonGia)</del>
+                @if (p.DonGiaKhuyenMai > 0)
+                {
+                    <ins>@formattedDiscountedPrice VNĐ</ins>
+                    
+                    <del>@formattedOriginalPrice VNĐ</del>
+                }
+                else
+                {
+                    <ins>@formattedOriginalPrice VNĐ</ins>
+                }
             </div>
         </div>
-        }
+    }
 </div>

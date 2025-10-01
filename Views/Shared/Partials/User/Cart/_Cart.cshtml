@@ -1,9 +1,14 @@
-﻿@{
-    var productStore = Context.Items["product"] as ProductStore;
-    List<Product>
-    products = new List<Product>();
-    products = productStore.Products;
+﻿@using System.Globalization;
+@using BaiTap_02_23WebC_Nhom10.Service;
+@{
+    
+    var productService = Context.Items["product"] as ProductService;
+    var products = productService?.Products ?? new List<Product>();
+
+    
+    var culture = new CultureInfo("vi-VN");
 }
+
 <form method="post" action="#">
     <table cellspacing="0" class="shop_table cart">
         <thead>
@@ -17,8 +22,15 @@
             </tr>
         </thead>
         <tbody>
-            @{
-                var p = products.First();
+            @foreach (var p in products.Take(2))
+            {
+                
+                int quantity = 1;
+                
+                decimal unitPrice = (decimal)(p.DonGia * (1 - p.DonGiaKhuyenMai));
+                
+                decimal subTotal = unitPrice * quantity;
+
                 <tr class="cart_item">
                     <td class="product-remove">
                         <a title="Remove this item" class="remove" href="#">×</a>
@@ -27,30 +39,31 @@
                     <td class="product-thumbnail">
                         <a href="#">
                             <img width="145" height="145" alt="@p.TenSp" class="shop_thumbnail" src="~/img/@p.HinhAnh" />
-
                         </a>
                     </td>
 
                     <td class="product-name">
-                        <a href="#">Ship Your Idea</a>
+                        <a href="#">@p.TenSp</a>
                     </td>
 
                     <td class="product-price">
                         <span class="amount">
-                            <p>@p.DonGia.ToString("N0") VNĐ</p>
+                            @unitPrice.ToString("N0", culture) VNĐ
                         </span>
                     </td>
 
                     <td class="product-quantity">
                         <div class="quantity buttons_added">
                             <input type="button" class="minus" value="-">
-                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
+                            <input type="number" size="4" class="input-text qty text" title="Qty" value="@quantity" min="0" step="1">
                             <input type="button" class="plus" value="+">
                         </div>
                     </td>
 
                     <td class="product-subtotal">
-                        <span class="amount">@p.DonGia.ToString("N0") VNĐ</span>
+                        <span class="amount">
+                            @subTotal.ToString("N0", culture) VNĐ
+                        </span>
                     </td>
                 </tr>
             }

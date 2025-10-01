@@ -262,15 +262,15 @@ body {
     }
 
 .slide-one {
-    background-image: url(img/slide-1.jpg)
+    background-image: url(~/img/slide-1.jpg)
 }
 
 .slide-two {
-    background-image: url(img/slide-2.jpg)
+    background-image: url(~/img/slide-2.jpg)
 }
 
 .slide-three {
-    background-image: url(img/slide-3.jpg)
+    background-image: url(~/img/slide-3.jpg)
 }
 
 .slide-text {
@@ -1325,4 +1325,3 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
 .pagination > li > a, .pagination > li > span {
     color: #1abc9c;
 }
-

@@ -1,12 +1,22 @@
-﻿@{
-    var productStore = Context.Items["product"] as ProductStore;
-    List<Product> products = new List<Product>();
-    products = productStore.Products;
+﻿@using BaiTap_02_23WebC_Nhom10.Service;
+@using System.Globalization;
+@{
+
+    var productService = Context.Items["product"] as ProductService;
+    var products = productService?.Products ?? new List<Product>();
+    var culture = new CultureInfo("vi-VN");
 }
+
 <div class="related-products-wrapper">
     <h2 class="related-products-title">Related Products</h2>
     <div class="related-products-carousel">
-        @foreach (var p in products){
+        @foreach (var p in products)
+        {
+
+            double discountedPrice = p.DonGia * (1 - p.DonGiaKhuyenMai);
+            string formattedDiscountedPrice = discountedPrice.ToString("N0", culture);
+            string formattedOriginalPrice = p.DonGia.ToString("N0", culture);
+
             <div class="single-product">
                 <div class="product-f-image">
                     <img src="~/img/@p.HinhAnh" alt="">
@@ -19,8 +29,17 @@
                 <h2><a asp-controller="product" asp-action="detail" asp-route-id="@p.MaSp">@p.TenSp</a></h2>
 
                 <div class="product-carousel-price">
-                    <ins>$@string.Format("{0:N2}", p.DonGia * (1 - p.DonGiaKhuyenMai))</ins>
-                    <del>$@string.Format("{0:N2}", p.DonGia)</del>
+
+                    @if (p.DonGiaKhuyenMai > 0)
+                    {
+                        <ins>@formattedDiscountedPrice VNĐ</ins>
+
+                        <del>@formattedOriginalPrice VNĐ</del>
+                    }
+                    else
+                    {
+                        <ins>@formattedOriginalPrice VNĐ</ins>
+                    }
                 </div>
             </div>
         }

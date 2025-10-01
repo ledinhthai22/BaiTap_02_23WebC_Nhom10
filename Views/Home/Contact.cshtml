@@ -1,5 +1,5 @@
 ﻿@section title {
-    Liên Hệ - eElectronics - HTML eCommerce Template
+    Contact - eElectronics - HTML eCommerce Template
 }
 @section css {}
 @section js {
@@ -16,6 +16,9 @@
             </div>
         </div>
     </div>
+}
+@{
+    ViewBag.PageName = "Contact";
 }
 <div class="single-product-area">
     <div class="zigzag-bottom"></div>
@@ -39,10 +42,6 @@
                                         <input type="email" name="email" id="email" placeholder="Enter your email" required class="form-control">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" name="subject" id="subject" placeholder="Message subject" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="message">Message Content</label>

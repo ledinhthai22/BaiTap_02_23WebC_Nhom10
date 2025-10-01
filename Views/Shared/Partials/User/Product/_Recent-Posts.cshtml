@@ -1,7 +1,8 @@
-﻿@{
-    var productStore = Context.Items["product"] as ProductStore;
+﻿@using BaiTap_02_23WebC_Nhom10.Service;
+@{
+    var productService = Context.Items["product"] as ProductService;
     List<Product> products = new List<Product>();
-    products = productStore.Products;
+    products = productService.Products;
 }
 <div class="single-sidebar">
     <h2 class="sidebar-title">Recent Posts</h2>

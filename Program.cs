@@ -1,5 +1,6 @@
 using BaiTap_02_23WebC_Nhom10.Models;
-
+using BaiTap_02_23WebC_Nhom10.Service;
+using Microsoft.AspNetCore.Builder;
 namespace BaiTap_02_23WebC_Nhom10
 {
     public class Program
@@ -10,7 +11,7 @@ namespace BaiTap_02_23WebC_Nhom10
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<ProductStore>();
+            builder.Services.AddScoped<ProductService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -27,13 +28,10 @@ namespace BaiTap_02_23WebC_Nhom10
             app.UseAuthorization();
             app.UseMiddleware<Middleware.ProductMiddleware>();
             app.MapStaticAssets();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                  name: "areas",
-                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                );
-            });
+            app.MapControllerRoute(
+                 name: "areas",
+                 pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
