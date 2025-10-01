@@ -22,7 +22,7 @@
     </div>
 }
 @{
-    // Khai báo CultureInfo cho định dạng tiền tệ Việt Nam (dấu chấm phân cách hàng nghìn, không thập phân)
+    ViewBag.PageName = "List";
     var culture = new CultureInfo("vi-VN");
 }
 <div class="single-product-area">
@@ -60,21 +60,19 @@
                 <div class="product-pagination text-center">
                     <nav>
                         <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
+                            @{
+                                var TotalItems = ViewBag.TotalItems;
+                                var PageSize = ViewBag.PageSize;
+                                var CurrentPage = ViewBag.CurrentPage;
+								var TotalPages = (int)Math.Ceiling((double)TotalItems / PageSize);
+
+								for (int i = 1; i <= TotalPages; i++)
+								{
+                                    <li class="page-item @(i == CurrentPage ? "active" : "")">
+                                        <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                    </li>
+								}
+                            }
                         </ul>
                     </nav>
                 </div>
