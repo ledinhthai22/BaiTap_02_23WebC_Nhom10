@@ -2,13 +2,12 @@
   "products": [
     {
       "MaSp": 1,
-      "TenSp": "Iphone 11 Thường",
+      "TenSp": "Iphone 11 Th\u01B0\u1EDDng",
       "DonGia": 11000000,
       "DonGiaKhuyenMai": 0.05,
       "HinhAnh": "product-1.jpg",
-      "MoTa": "Phiên bản iPhone 11 thường",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 11 th\u01B0\u1EDDng",
       "LoaiSp": "Iphone 11"
-
     },
     {
       "MaSp": 2,
@@ -16,7 +15,7 @@
       "DonGia": 15000000,
       "DonGiaKhuyenMai": 0.07,
       "HinhAnh": "product-2.jpg",
-      "MoTa": "Phiên bản iPhone 11 Pro cao cấp",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 11 Pro cao c\u1EA5p",
       "LoaiSp": "Iphone 11"
     },
     {
@@ -25,7 +24,7 @@
       "DonGia": 17000000,
       "DonGiaKhuyenMai": 0.1,
       "HinhAnh": "product-3.jpg",
-      "MoTa": "Phiên bản iPhone 11 Pro Max màn hình lớn",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 11 Pro Max m\u00E0n h\u00ECnh l\u1EDBn",
       "LoaiSp": "Iphone 11"
     },
     {
@@ -34,16 +33,16 @@
       "DonGia": 16000000,
       "DonGiaKhuyenMai": 0.05,
       "HinhAnh": "product-4.jpg",
-      "MoTa": "Phiên bản iPhone 12 Mini nhỏ gọn",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 12 Mini nh\u1ECF g\u1ECDn",
       "LoaiSp": "Iphone 12"
     },
     {
       "MaSp": 5,
-      "TenSp": "Iphone 12 Thường",
+      "TenSp": "Iphone 12 Th\u01B0\u1EDDng",
       "DonGia": 18000000,
       "DonGiaKhuyenMai": 0.05,
       "HinhAnh": "product-5.jpg",
-      "MoTa": "Phiên bản iPhone 12 thường",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 12 th\u01B0\u1EDDng",
       "LoaiSp": "Iphone 12"
     },
     {
@@ -52,7 +51,7 @@
       "DonGia": 20000000,
       "DonGiaKhuyenMai": 0.07,
       "HinhAnh": "product-6.jpg",
-      "MoTa": "Phiên bản iPhone 12 Pro",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 12 Pro",
       "LoaiSp": "Iphone 12"
     },
     {
@@ -61,7 +60,7 @@
       "DonGia": 22000000,
       "DonGiaKhuyenMai": 0.1,
       "HinhAnh": "product-1.jpg",
-      "MoTa": "Phiên bản iPhone 12 Pro Max cao cấp",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 12 Pro Max cao c\u1EA5p",
       "LoaiSp": "Iphone 12"
     },
     {
@@ -70,16 +69,16 @@
       "DonGia": 18000000,
       "DonGiaKhuyenMai": 0.05,
       "HinhAnh": "product-2.jpg",
-      "MoTa": "Phiên bản iPhone 13 Mini nhỏ gọn",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 13 Mini nh\u1ECF g\u1ECDn",
       "LoaiSp": "Iphone 13"
     },
     {
       "MaSp": 9,
-      "TenSp": "Iphone 13 Thường",
+      "TenSp": "Iphone 13 Th\u01B0\u1EDDng",
       "DonGia": 21000000,
       "DonGiaKhuyenMai": 0.05,
       "HinhAnh": "product-3.jpg",
-      "MoTa": "Phiên bản iPhone 13 thường",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 13 th\u01B0\u1EDDng",
       "LoaiSp": "Iphone 13"
     },
     {
@@ -88,7 +87,7 @@
       "DonGia": 23000000,
       "DonGiaKhuyenMai": 0.07,
       "HinhAnh": "product-4.jpg",
-      "MoTa": "Phiên bản iPhone 13 Pro mạnh mẽ",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 13 Pro m\u1EA1nh m\u1EBD",
       "LoaiSp": "Iphone 13"
     },
     {
@@ -97,16 +96,16 @@
       "DonGia": 25000000,
       "DonGiaKhuyenMai": 0.1,
       "HinhAnh": "product-5.jpg",
-      "MoTa": "Phiên bản iPhone 13 Pro Max cao cấp nhất",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 13 Pro Max cao c\u1EA5p nh\u1EA5t",
       "LoaiSp": "Iphone 13"
     },
     {
       "MaSp": 12,
-      "TenSp": "Iphone 14 Thường",
+      "TenSp": "Iphone 14 Th\u01B0\u1EDDng",
       "DonGia": 23000000,
       "DonGiaKhuyenMai": 0.05,
       "HinhAnh": "product-6.jpg",
-      "MoTa": "Phiên bản iPhone 14 thường mới nhất",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 14 th\u01B0\u1EDDng m\u1EDBi nh\u1EA5t",
       "LoaiSp": "Iphone 14"
     },
     {
@@ -115,7 +114,7 @@
       "DonGia": 25000000,
       "DonGiaKhuyenMai": 0.07,
       "HinhAnh": "product-1.jpg",
-      "MoTa": "Phiên bản iPhone 14 Plus màn hình lớn",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 14 Plus m\u00E0n h\u00ECnh l\u1EDBn",
       "LoaiSp": "Iphone 14"
     },
     {
@@ -124,7 +123,7 @@
       "DonGia": 28000000,
       "DonGiaKhuyenMai": 0.08,
       "HinhAnh": "product-2.jpg",
-      "MoTa": "Phiên bản iPhone 14 Pro cao cấp",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 14 Pro cao c\u1EA5p",
       "LoaiSp": "Iphone 14"
     },
     {
@@ -133,7 +132,7 @@
       "DonGia": 30000000,
       "DonGiaKhuyenMai": 0.1,
       "HinhAnh": "product-3.jpg",
-      "MoTa": "Phiên bản iPhone 14 Pro Max cao cấp nhất",
+      "MoTa": "Phi\u00EAn b\u1EA3n iPhone 14 Pro Max cao c\u1EA5p nh\u1EA5t",
       "LoaiSp": "Iphone 14"
     },
     {
@@ -142,7 +141,7 @@
       "DonGia": 22000000,
       "DonGiaKhuyenMai": 0.05,
       "HinhAnh": "product-4.jpg",
-      "MoTa": "Samsung Galaxy S24 bản tiêu chuẩn",
+      "MoTa": "Samsung Galaxy S24 b\u1EA3n ti\u00EAu chu\u1EA9n",
       "LoaiSp": "Samsung"
     },
     {
@@ -151,7 +150,7 @@
       "DonGia": 28000000,
       "DonGiaKhuyenMai": 0.08,
       "HinhAnh": "product-5.jpg",
-      "MoTa": "Samsung Galaxy S24 Ultra màn hình lớn",
+      "MoTa": "Samsung Galaxy S24 Ultra m\u00E0n h\u00ECnh l\u1EDBn",
       "LoaiSp": "Samsung"
     },
     {
@@ -160,7 +159,7 @@
       "DonGia": 24000000,
       "DonGiaKhuyenMai": 0.05,
       "HinhAnh": "product-6.jpg",
-      "MoTa": "Samsung Galaxy S25 bản mới",
+      "MoTa": "Samsung Galaxy S25 b\u1EA3n m\u1EDBi",
       "LoaiSp": "Samsung"
     },
     {
@@ -169,7 +168,7 @@
       "DonGia": 30000000,
       "DonGiaKhuyenMai": 0.08,
       "HinhAnh": "product-1.jpg",
-      "MoTa": "Samsung Galaxy S25 Ultra cao cấp",
+      "MoTa": "Samsung Galaxy S25 Ultra cao c\u1EA5p",
       "LoaiSp": "Samsung"
     },
     {
@@ -178,8 +177,17 @@
       "DonGia": 40000000,
       "DonGiaKhuyenMai": 0.1,
       "HinhAnh": "product-2.jpg",
-      "MoTa": "Samsung Galaxy Z Fold 6 màn hình gập",
+      "MoTa": "Samsung Galaxy Z Fold 6 m\u00E0n h\u00ECnh g\u1EADp",
       "LoaiSp": "Samsung"
+    },
+    {
+      "MaSp": 21,
+      "TenSp": "Khang map dit",
+      "DonGia": 1000000000,
+      "DonGiaKhuyenMai": 0.9,
+      "HinhAnh": "497e97fb-67ab-4d77-81c7-250fb65a9721.jpg",
+      "MoTa": "hehe\r\n",
+      "LoaiSp": "Khang Map Dit"
     }
   ]
 }

@@ -1,36 +1,46 @@
 ﻿using System.Text.Json;
 using BaiTap_02_23WebC_Nhom10.Models;
-using BaiTap_02_23WebC_Nhom10.Service;
 
 namespace BaiTap_02_23WebC_Nhom10.Middleware
 {
     public class ProductMiddleware
     {
         private readonly RequestDelegate _next;
+        private readonly IWebHostEnvironment _env;
 
-        public ProductMiddleware(RequestDelegate next)
+        public ProductMiddleware(RequestDelegate next, IWebHostEnvironment env)
         {
             _next = next;
+            _env = env;
         }
 
         public async Task InvokeAsync(HttpContext context)
         {
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "db.json");
-            List<Product> products = new List<Product>();
+            
+            var dbPath = Path.Combine(_env.WebRootPath, "data", "db.json");
 
-            if (File.Exists(filePath))
+            List<Product> products = new();
+
+            if (File.Exists(dbPath))
             {
-                string json = await File.ReadAllTextAsync(filePath);
-                using var doc = JsonDocument.Parse(json);
-                var root = doc.RootElement;
-
-                if (root.TryGetProperty("products", out JsonElement productsElement))
+                try
                 {
-                    products = JsonSerializer.Deserialize<List<Product>>(productsElement.GetRawText()) ?? new List<Product>();
-                }
+                    var json = await File.ReadAllTextAsync(dbPath);
+                    using var doc = JsonDocument.Parse(json);
 
-                context.Items["product"] = new ProductService(products);
+                    if (doc.RootElement.TryGetProperty("products", out var productsEl))
+                    {
+                        products = JsonSerializer.Deserialize<List<Product>>(productsEl.GetRawText(),
+                            new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new List<Product>();
+                    }
+                }
+                catch
+                {
+                    products = new List<Product>();
+                }
             }
+
+            context.Items["products"] = products;
 
             await _next(context);
         }

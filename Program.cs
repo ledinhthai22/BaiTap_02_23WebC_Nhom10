@@ -9,16 +9,20 @@ namespace BaiTap_02_23WebC_Nhom10
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<ProductService>();
+            builder.Services.AddScoped<ProductService>(provider =>
+            {
+                var env = provider.GetRequiredService<IWebHostEnvironment>();
+                string dbPath = Path.Combine(env.WebRootPath,"data" ,"db.json");
+                return new ProductService(dbPath);
+            });
+
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+           
                 app.UseHsts();
             }
 
