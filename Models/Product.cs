@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using Newtonsoft.Json;
+
 
 namespace BaiTap_02_23WebC_Nhom10.Models
 {

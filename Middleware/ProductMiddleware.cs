@@ -16,9 +16,7 @@ namespace BaiTap_02_23WebC_Nhom10.Middleware
 
         public async Task InvokeAsync(HttpContext context)
         {
-            
             var dbPath = Path.Combine(_env.WebRootPath, "data", "db.json");
-
             List<Product> products = new();
 
             if (File.Exists(dbPath))
@@ -40,9 +38,11 @@ namespace BaiTap_02_23WebC_Nhom10.Middleware
                 }
             }
 
+            // Lưu danh sách sản phẩm
             context.Items["products"] = products;
 
             await _next(context);
         }
+
     }
 }

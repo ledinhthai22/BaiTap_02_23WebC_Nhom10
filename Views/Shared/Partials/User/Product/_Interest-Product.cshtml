@@ -3,8 +3,7 @@
 
 @{
     
-    var productService = Context.Items["product"] as ProductService;
-    var products = productService?.Products ?? new List<Product>();
+    var products = Context.Items["products"] as List<Product> ?? new List<Product>();
     var culture = new CultureInfo("vi-VN");
 }
 

@@ -1,15 +1,21 @@
-﻿@using BaiTap_02_23WebC_Nhom10.Service;
+﻿@using BaiTap_02_23WebC_Nhom10.Models
+@using System.Linq
+
 @{
-    var productService = Context.Items["product"] as ProductService;
-    List<Product> products = new List<Product>();
-    products = productService.Products;
+    // Lấy danh sách sản phẩm từ middleware
+    var products = Context.Items["products"] as List<Product> ?? new List<Product>();
 }
+
 <div class="single-sidebar">
     <h2 class="sidebar-title">Recent Posts</h2>
     <ul>
-		@foreach (var p in products.Take(5))
-		{
-			<li><a asp-controller="product" asp-action="detail" asp-route-id="@p.MaSp">@p.TenSp</a></li>
-		}
+        @foreach (var p in products.Take(5))
+        {
+            <li>
+                <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.MaSp">
+                    @p.TenSp
+                </a>
+            </li>
+        }
     </ul>
 </div>
