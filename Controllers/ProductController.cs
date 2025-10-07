@@ -1,6 +1,6 @@
-﻿using BaiTap_02_23WebC_Nhom10.Models;
+﻿using BaiTap_03_23WebC_Nhom10.Models;
 using Microsoft.AspNetCore.Mvc;
-using BaiTap_02_23WebC_Nhom10.Service;
+using BaiTap_03_23WebC_Nhom10.Service;
 using PagedList;
 
 namespace WebApplication1.Controllers
