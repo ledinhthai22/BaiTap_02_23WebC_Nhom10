@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using BaiTap_03_23WebC_Nhom10.Models;
+using BaiTap_02_23WebC_Nhom10.Models;
 
-namespace BaiTap_03_23WebC_Nhom10.Middleware
+namespace BaiTap_02_23WebC_Nhom10.Middleware
 {
     public class ProductMiddleware
     {

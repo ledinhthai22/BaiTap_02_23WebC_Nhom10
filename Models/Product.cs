@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 
-namespace BaiTap_03_23WebC_Nhom10.Models
+namespace BaiTap_02_23WebC_Nhom10.Models
 {
     public class Product
     {
